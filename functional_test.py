@@ -10,7 +10,7 @@ class NewVisitorTest(unittest.TestCase):
 		self.browser.quit()
 	def test_can_start_a_list_and_retrive_it_later(self):
 		#blah blah blah
-		#my game list : darkest dungeon
+		#game list : darkest dungeon
 		self.browser.get('http://localhost:8000')
 
 		#civilization V
