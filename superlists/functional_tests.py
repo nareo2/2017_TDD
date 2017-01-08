@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 import unittest
 
 class NewVisitorTest(unittest.TestCase):
@@ -16,17 +17,31 @@ class NewVisitorTest(unittest.TestCase):
 
 		#Oh title says 'To-Do'..
 		self.assertIn('To-Do', self.browser.title)
-		self.fail('Finish the test!')
+		header_text = self.browser.find_element_by_tag_name('h1').text
+		self.assertIn('To-Do', header_text)
 
-#Write to-do itme
+		#Write to-do itme
+		inputbox = self.browser.find_element_by_id('id_nex_item')
+		self.assertEqual(
+			inputbox.get_attribute('plabeholder'),
+			'Enter a todo item'
+		)
 
-#Type "Buy peacock feathers" into a text box
+		#Type "Buy peacock feathers" into a text box
+		inputbox.send_keys('Buy peacock feathers')
 
-#When I hit enter, the page updates, and now the page lists
-#"1: Buy peacock feathers" as an item in a to-do list
+		#When I hit enter, the page updates, and now the page lists
+		#"1: Buy peacock feathers" as an item in a to-do list
+		inputbox.send_keys(Keys.ENTER)
 
+		table = self.browser.find_element_by_id('id_list_table')
+		rows = table.find_elements_by_tag_name('tr')
+		self.assertTrue(
+			any(row.text == '1: Buypeacock feathers' for row in rows)
+		)
 #There is still a text box inviting me to add another item. I
 #enter "Use peacock feathers to make a fly"
+		self.fail('Finish the test!')
 
 #The page updates again, and now shows both iems on my list
 
