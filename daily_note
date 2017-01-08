@@ -8,5 +8,11 @@ tdd를 3번째로 다시 시-작. 목표는 내가 원하는 웹사이트를 만
 * 1.8
 
 --
-달려
+django의 흐름
+User가 URL을 보낸다 -> 
+urls.py에서 URL을 decoding하고, view.py의 method 중 선택(url에 맞는 view를 선택) ->
+view.py의 method가 html을 잘 만들어서 반환
+	이 과정을 view의 method에서 직접 html을 작성했다가
+	refactor해서, templates로 html을 따로 작성해서 반환하게 되었다
+
 --
