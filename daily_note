@@ -16,3 +16,11 @@ view.py의 method가 html을 잘 만들어서 반환
 	refactor해서, templates로 html을 따로 작성해서 반환하게 되었다
 
 --
+
+* 1.19
+
+--
+6장
+inputbox.send 는 POST method를 사용한다. lists/view에서 POST일때  redirect되는
+ 주소를 처음 화면인 '/'에서 '/lists/the-only-...'으로 변경했다.
+--
