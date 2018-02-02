@@ -9,7 +9,7 @@ tdd를 3번째로 다시 시-작. 목표는 내가 원하는 웹사이트를 만
 
 --
 django의 흐름
-User가 URL을 보낸다 -> 
+User가 URL을 보낸다 ->
 urls.py에서 URL을 decoding하고, view.py의 method 중 선택(url에 맞는 view를 선택) ->
 view.py의 method가 html을 잘 만들어서 반환
 	이 과정을 view의 method에서 직접 html을 작성했다가
@@ -24,3 +24,14 @@ view.py의 method가 html을 잘 만들어서 반환
 inputbox.send 는 POST method를 사용한다. lists/view에서 POST일때  redirect되는
  주소를 처음 화면인 '/'에서 '/lists/the-only-...'으로 변경했다.
 --
+
+*2.1
+==
+4번째로 다-시 시작.. for my site and career!
+==
+
+*2.2
+
+==
+잘 하다가.. 장고 버전때문에 너무 많은 뻘짓을 해야 되서 다시 1.8로 버전을 내렸다.
+==
