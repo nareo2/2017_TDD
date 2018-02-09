@@ -26,6 +26,7 @@ inputbox.send 는 POST method를 사용한다. lists/view에서 POST일때  redi
 --
 
 *2.1
+
 ==
 4번째로 다-시 시작.. for my site and career!
 ==
@@ -34,4 +35,11 @@ inputbox.send 는 POST method를 사용한다. lists/view에서 POST일때  redi
 
 ==
 잘 하다가.. 장고 버전때문에 너무 많은 뻘짓을 해야 되서 다시 1.8로 버전을 내렸다.
+==
+
+*2.8
+
+==
+목표 : 8장까지 끝내기
+
 ==
