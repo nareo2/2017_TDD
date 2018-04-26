@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block header_text %}글쓰기{% endblock %}
+{% block main_field %}
+<textarea class="form-control" id="comments" name="comments"
+          placeholder="Comment" rows="5">
+</textarea>
+<button class="btn pull-right" type="submit">Send</button>
+{% endblock %}
+{% block form_action %}{% url 'new_list' %}{% endblock %}

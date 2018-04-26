@@ -25,7 +25,9 @@ SECRET_KEY = 'ubq%am9nu72%xhy8!rgygzflm4@#(1rw^5p%mtr0w9^vdgfk81'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
+
+LOGIN_REDIRECT_URL = '/'
 
 
 # Application definition
@@ -40,7 +42,7 @@ INSTALLED_APPS = [
     'lists',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -106,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
