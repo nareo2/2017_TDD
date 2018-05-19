@@ -3,6 +3,10 @@
 {% block content %}
   <h1>New post</h1>
   <form class="post-form" method="POST">{% csrf_token %}
+    <select name="type">
+      <option value="diary">diary</option>
+      <option value="study">study</option>
+    </select>
     {{ form.as_p }}
     <button type="submit" class="save btn bnt-default">Save</button>
   </form>

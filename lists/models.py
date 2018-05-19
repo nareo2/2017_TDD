@@ -14,6 +14,7 @@ class Item(models.Model):
     pass
 
 class Post(models.Model):
+    type = models.TextField(default='')
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()

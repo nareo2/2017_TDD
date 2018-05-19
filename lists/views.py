@@ -9,16 +9,23 @@ from django.contrib.auth.views import login, logout
 from .models import Item, List, Post, Comment
 from .forms import PostForm, CommentForm
 
+import pdb
+
 # Create your views here.
 def home_page(request):
-    return render(request, 'home.html')
+    return render(request, 'blog/home.html')
 
 def writing_page(request):
     return render(request, 'writing.html')
 
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now())
+    posts = Post.objects.filter(type='study')
     return render(request, 'blog/post_list.html', {'posts':posts})
+
+@login_required
+def diary_list(request):
+    posts = Post.objects.filter(type='diary')
+    return render(request, 'blog/diary_list.html', {'posts':posts})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -43,6 +50,7 @@ def post_edit(request, pk):
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
+            type = request.POST.get('type')
             post = form.save(commit=False)
             user = get_object_or_404(User,username=request.user)
             post.author = user
@@ -57,9 +65,11 @@ def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
+            type = request.POST.get('type')
             post = form.save(commit=False)
             user = get_object_or_404(User,username=request.user)
             post.author = user
+            post.type = type
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:
